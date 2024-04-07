@@ -1,0 +1,32 @@
+<div style="font-family: Arial, sans-serif;">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="font-size: 24px;">{{course.courseDescription}}</h2>
+            <hr>
+            <!-- Form submission now directed to /courses/modify -->
+            <form action="/courses/modify" method="POST">
+                <!-- Hidden input field for storing the course ID -->
+                <input type="hidden" name="courseId" value="{{course.courseId}}">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="courseCode" style="font-size: 18px;">Code:</label>
+                            <!-- Editable input for course code -->
+                            <input class="form-control" id="courseCode" name="courseCode" type="text" value="{{course.courseCode}}" required/>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <label for="courseDescription" style="font-size: 18px;">Description:</label>
+                            <!-- Editable input for course description -->
+                            <input class="form-control" id="courseDescription" name="courseDescription" type="text" value="{{course.courseDescription}}" required/>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- Button to submit updated course information -->
+                <button type="submit" style="font-size: 18px; padding: 8px 16px; border: none; background-color: #007bff; color: #fff; cursor: pointer;">Save Changes</button>
+            </form>
+        </div>
+    </div>
+</div>

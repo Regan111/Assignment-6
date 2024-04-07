@@ -1,0 +1,166 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+/* Apply font-family to body */
+body {
+  font-family: 'Arial', sans-serif; /* Changed font-family to Arial */
+  margin: 0;
+  padding: 0;
+  color: #555; /* Changed default text color */
+}
+
+/* Apply gradient background to body */
+body, html {
+  background: linear-gradient(to bottom, #f8d7da, #f8d7da);
+  overflow: auto;
+  height: 100%;
+}
+
+/* Apply custom styles to navigation bar */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #ffc107; /* Changed to yellow */
+  border-bottom: 2px solid #ff5722; /* Changed to orange */
+}
+
+/* Apply custom styles to navigation brand */
+.navbar-brand {
+  font-family: 'Arial', sans-serif; /* Change font-family to Arial */
+  font-style: normal; /* Normal font style */
+  color: #333; /* Changed text color to dark gray */
+  font-weight: bold;
+}
+
+/* Apply custom styles to navigation links */
+.navbar-nav .nav-link {
+  font-family: 'Arial', sans-serif; /* Change font-family to Arial */
+  color: #333; /* Dark gray */
+  font-style: normal; /* Normal font style */
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ff5722; /* Changed to orange on hover */
+}
+
+/* Apply custom styles to primary button */
+.btn-primary {
+  background-color: #ff5722; /* Changed to orange */
+  border-color: #ff5722; /* Changed to orange */
+  color: #fff; /* White */
+  padding: 12px 24px; /* Increased padding */
+  border-radius: 20px; /* Increased border-radius */
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #ff8a65; /* Lighter orange on hover */
+  border-color: #ff8a65; /* Lighter orange on hover */
+  color: #fff; /* White */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Apply custom styles to table cells inside odd numbered table rows */
+.table tbody tr:nth-child(odd) td {
+  background-color: #ffe0b2; /* Changed to light orange */
+}
+
+/* Apply custom styles to headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Arial', sans-serif; /* Change font-family to Arial */
+  color: #ff5722; /* Changed to orange */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+/* Apply custom styles to anchor elements */
+a {
+  color: #ff5722; /* Changed to orange */
+  text-decoration: none;
+  font-style: normal; /* Normal font style */
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff8a65; /* Lighter orange on hover */
+}
+
+/* Apply custom styles to fieldset legends */
+legend {
+  padding-top: 15px; /* Increased padding */
+  padding-bottom: 15px; /* Increased padding */
+  font-family: 'Arial', sans-serif; /* Change font-family to Arial */
+  color: #ff5722; /* Changed to orange */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Apply custom styles to tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 15px; /* Increased border-radius */
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+  padding: 20px; /* Increased padding */
+  text-align: left;
+}
+
+table th {
+  background-color: #ff5722; /* Changed to orange */
+  color: #fff; /* White */
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #ffe0b2; /* Light orange */
+}
+
+table tbody tr:hover {
+  background-color: #ffd180; /* Lighter orange on hover */
+}
+
+/* Additional enhancements */
+.container {
+  margin-top: 30px; /* Increased margin-top */
+}
+
+.col-md-12 {
+  background-color: #fff; /* White */
+  border-radius: 15px; /* Increased border-radius */
+  padding: 30px; /* Increased padding */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.col-md-12 p {
+  line-height: 1.8; /* Increased line-height */
+}
+
+/* Customize lists */
+ul {
+  list-style-type: square; /* Changed list-style-type to square */
+  padding-left: 20px; /* Increased padding-left */
+}
+
+ul li {
+  margin-bottom: 15px; /* Increased margin-bottom */
+}
+
+/* Add box shadow to images */
+img {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Decreased border-radius */
+  margin-bottom: 30px; /* Increased margin-bottom */
+}
+
+/* Style audio and video elements */
+audio, video {
+  width: 100%;
+  border-radius: 15px; /* Increased border-radius */
+  margin-bottom: 30px;   
+}
+

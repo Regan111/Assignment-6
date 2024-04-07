@@ -1,0 +1,103 @@
+<div style="font-family: Arial, sans-serif;">
+    <div style="margin-bottom: 20px;">
+        <main>
+            <!-- Display error message if it exists -->
+            <!-- Add the following lines -->
+            {{#if error}}
+            <div style="color: red; margin-bottom: 10px;">{{error}}</div>
+            {{/if}}
+            
+            <form method="POST" action="/students/add">
+                <fieldset>
+                    <legend style="font-weight: bold;">Personal Information</legend>
+                    <div style="margin-bottom: 20px;">
+                        <div style="display: flex;">
+                            <div style="width: 50%; margin-right: 20px;">
+                                <div style="margin-bottom: 10px;">
+                                    <label style="font-weight: bold;">First Name:</label>
+                                    <!-- Utilize placeholder and value attribute -->
+                                    <input style="width: 100%;" name="firstName" type="text" value="{{studentData.firstName}}" />
+                                </div>
+                            </div>
+                            <div style="width: 50%;">
+                                <div style="margin-bottom: 10px;">
+                                    <label style="font-weight: bold;">Last Name:</label>
+                                    <!-- Utilize placeholder and value attribute -->
+                                    <input style="width: 100%;" name="lastName" type="text" value="{{studentData.lastName}}" />
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                            <label style="font-weight: bold;">Email:</label>
+                            <!-- Utilize placeholder and value attribute -->
+                            <input style="width: 100%;" name="email" type="email" value="{{studentData.email}}" />
+                        </div>
+                    </div>
+                    <div style="display: flex; margin-bottom: 20px;">
+                        <div style="width: 33.33%; margin-right: 20px;">
+                            <div style="margin-bottom: 10px;">
+                                <label style="font-weight: bold;">Address (Street):</label>
+                                <!-- Utilize placeholder and value attribute -->
+                                <input style="width: 100%;" name="addressStreet" type="text" value="{{studentData.addressStreet}}" />
+                            </div>
+                        </div>
+                        <div style="width: 33.33%; margin-right: 20px;">
+                            <div style="margin-bottom: 10px;">
+                                <label style="font-weight: bold;">Address (City):</label>
+                                <!-- Utilize placeholder and value attribute -->
+                                <input style="width: 100%;" name="addressCity" type="text" value="{{studentData.addressCity}}" />
+                            </div>
+                        </div>
+                        <div style="width: 33.33%;">
+                            <div style="margin-bottom: 10px;">
+                                <label style="font-weight: bold;">Address (Province):</label>
+                                <!-- Utilize placeholder and value attribute -->
+                                <input style="width: 100%;" name="addressProvince" type="text" value="{{studentData.addressProvince}}" />
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend style="font-weight: bold;">Academic Information</legend>
+                    <div style="margin-bottom: 20px;">
+                        <div style="display: flex;">
+                            <div style="width: 33.33%; margin-right: 20px;">
+                                <label style="font-weight: bold;">College Employment:</label><br />
+                                <div>
+                                    <!-- Utilize conditional rendering -->
+                                    <input style="margin-right: 5px;" type="checkbox" id="TA" name="TA" {{#if studentData.TA}}checked{{/if}}>
+                                    <label style="font-weight: normal;" for="TA">
+                                        Teaching Assistant
+                                    </label>
+                                </div>
+                            </div>
+                            <div style="width: 33.33%; margin-right: 20px;">
+                                <label style="font-weight: bold;">Enrollment Status:</label><br />
+                                <div>
+                                    <!-- Utilize conditional rendering -->
+                                    <input style="margin-right: 5px;" type="radio" name="status" value="Full Time" {{#if (equal studentData.status 'Full Time')}}checked{{/if}}> Full Time
+                                </div>
+                                <div>
+                                    <!-- Utilize conditional rendering -->
+                                    <input style="margin-right: 5px;" type="radio" name="status" value="Part Time" {{#if (equal studentData.status 'Part Time')}}checked{{/if}}> Part Time
+                                </div>
+                            </div>
+                            <div style="width: 33.33%;">
+                                <label style="font-weight: bold;">Enrolled in Course:</label>
+                                <select style="width: 100%;" name="course" id="course">
+                                    <option value="">Select Course</option>
+                                    <!-- Populate select options dynamically -->
+                                    {{#each courses}}
+                                    <option value="{{this.courseId}}" {{#if (equal studentData.course this.courseId)}}selected{{/if}}>{{this.courseCode}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <hr />
+                <input type="submit" style="padding: 10px 20px; border: none; background-color: #007bff; color: #fff; cursor: pointer;" class="float-right" value="Add Student" /><br /><br /><br />
+            </form>
+        </main>
+    </div>
+</div>

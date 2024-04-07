@@ -1,0 +1,34 @@
+<!-- Button to add a new course -->
+<a href="/courses/add" style="font-size: 18px; padding: 8px 16px; border: none; background-color: #007bff; color: #fff; cursor: pointer;" class="float-right">Create New Course</a>
+
+<!-- Display courses table if there are courses -->
+{{#if courses.length}}
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="font-size: 18px;">Code</th>
+                <th style="font-size: 18px;">Description</th>
+                <th style="font-size: 18px;">Action</th> <!-- Action column header -->
+            </tr>
+        </thead>
+        <tbody>
+            {{#each courses}}
+            <tr>
+                <td style="font-size: 16px;"><a href="/course/{{this.courseId}}">{{this.courseCode}}</a></td>
+                <td style="font-size: 16px;"><a href="/students?course={{this.courseId}}">{{this.courseDescription}}</a></td>
+                <td>
+                    <!-- Different action button -->
+                    <a href="/courses/delete/{{this.courseId}}" style="font-size: 16px; padding: 4px 8px; border: none; background-color: #dc3545; color: #fff; cursor: pointer;" class="btn btn-danger">Remove</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+{{else}}
+<!-- Display a message if there are no courses -->
+<div class="col-md-12 text-center">
+    <strong style="font-size: 18px;">{{message}}</strong>
+</div>
+{{/if}}
